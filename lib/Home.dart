@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 
 String fbUrl = "https://www.facebook.com/profile.php?id=100016416902538";
 String liUrl = "https://www.linkedin.com/in/francisco-gonzalez-861333134";
@@ -57,7 +59,23 @@ class _HomePageState extends State<HomePage> {
               children: [
                 FadeInDown(
                   child: Container(
-                    child: Text("Hello! My name is Frank.", style: GoogleFonts.catamaran(fontSize: 48, fontWeight: FontWeight.bold, color: Colors.white),),
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          ),
+                          Container(child: Row(children: [Text("Hello!", style: GoogleFonts.catamaran(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.red),), Padding(padding: EdgeInsets.fromLTRB(0, 0, 40, 0),), Container(child: Image.asset("graphics/wave.png", scale: 1.5,),),]), padding: EdgeInsets.fromLTRB(20, 0, 20, 0),),
+                          Container(child: Text("My name is Frank.", style: GoogleFonts.catamaran(fontSize: 48, fontWeight: FontWeight.bold, color: Colors.black),), padding: EdgeInsets.fromLTRB(20, 0, 20, 0),),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                          )
+                        ],
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
+                      elevation: 20,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    ),
                   ),
                   delay: Duration(milliseconds: 400),
                 ),
