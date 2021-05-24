@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Home.dart';
+import 'AboutMe.dart';
 
 bool animatePageOne = true;
 
@@ -96,10 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
                 HomePage(animate: animatePageOne,),
-                Text(
-                  'Likes',
-                  style: optionStyle,
-                ),
+                AboutMePage(),
                 Text(
                   'Search',
                   style: optionStyle,
@@ -142,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   GButton(
                     icon: FontAwesomeIcons.heart,
-                    text: 'Likes',
+                    text: 'About Me',
                   ),
                   GButton(
                     icon: FontAwesomeIcons.search,
