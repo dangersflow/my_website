@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Home.dart';
 import 'AboutMe.dart';
+import 'SizeConfig.dart';
 
 bool animatePageOne = true;
 
@@ -79,95 +80,93 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return AspectRatio(aspectRatio: 16/9,
-      child: Scaffold(
+    return Scaffold(
 
-        backgroundColor: Color(0xFF1B263B),
-        body: Stack(
-          children: [
-            RotatedBox(quarterTurns: 2,
-              child: Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage("graphics/gradient.png"), fit: BoxFit.cover)
-                ),
+      backgroundColor: Color(0xFF1B263B),
+      body: Stack(
+        children: [
+          RotatedBox(quarterTurns: 2,
+            child: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage("graphics/gradient.png"), fit: BoxFit.cover)
               ),
             ),
-            PageView(
-              controller: _pageController,
-              physics: NeverScrollableScrollPhysics(),
-              children: <Widget>[
-                HomePage(animate: animatePageOne,),
-                AboutMePage(),
-                Text(
-                  'Search',
-                  style: optionStyle,
-                ),
-                Text(
-                  'Profile',
-                  style: optionStyle,
-                ),
-              ],
+          ),
+          PageView(
+            controller: _pageController,
+            physics: NeverScrollableScrollPhysics(),
+            children: <Widget>[
+              HomePage(animate: animatePageOne,),
+              AboutMePage(),
+              Text(
+                'Search',
+                style: optionStyle,
+              ),
+              Text(
+                'Profile',
+                style: optionStyle,
+              ),
+            ],
+          )
+        ],
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 20,
+              color: Colors.black.withOpacity(.1),
             )
           ],
         ),
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 20,
-                color: Colors.black.withOpacity(.1),
-              )
-            ],
-          ),
-          child: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/4, vertical: 8),
-              child: GNav(
-                rippleColor: Colors.grey[300]!,
-                hoverColor: Colors.grey[100]!,
-                gap: 8,
-                activeColor: Colors.black,
-                iconSize: 24,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                duration: Duration(milliseconds: 400),
-                tabBackgroundColor: Colors.grey[100]!,
-                color: Colors.black,
-                tabs: [
-                  GButton(
-                    icon: FontAwesomeIcons.home,
-                    text: 'Home',
-                  ),
-                  GButton(
-                    icon: FontAwesomeIcons.heart,
-                    text: 'About Me',
-                  ),
-                  GButton(
-                    icon: FontAwesomeIcons.search,
-                    text: 'Search',
-                  ),
-                  GButton(
-                    icon: FontAwesomeIcons.user,
-                    text: 'Profile',
-                  ),
-                ],
-                selectedIndex: _selectedIndex,
-                onTabChange: (index) {
-                  setState(() {
-                    _selectedIndex = index;
-                    //
-                    //
-                    //using this page controller you can make beautiful animation effects
-                    _pageController.animateToPage(index,
-                        duration: Duration(milliseconds: 500), curve: Curves.easeOutSine);
-                    animatePageOne = false;
-                  });
-                },
-              ),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).orientation == Orientation.landscape ? MediaQuery.of(context).size.width * 0.25 : 10, vertical: 8),
+            child: GNav(
+              rippleColor: Colors.grey[300]!,
+              hoverColor: Colors.grey[100]!,
+              gap: 8,
+              activeColor: Colors.black,
+              iconSize: 24,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              duration: Duration(milliseconds: 400),
+              tabBackgroundColor: Colors.grey[100]!,
+              color: Colors.black,
+              tabs: [
+                GButton(
+                  icon: FontAwesomeIcons.home,
+                  text: 'Home',
+                ),
+                GButton(
+                  icon: FontAwesomeIcons.heart,
+                  text: 'About Me',
+                ),
+                GButton(
+                  icon: FontAwesomeIcons.search,
+                  text: 'Search',
+                ),
+                GButton(
+                  icon: FontAwesomeIcons.user,
+                  text: 'Profile',
+                ),
+              ],
+              selectedIndex: _selectedIndex,
+              onTabChange: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                  //
+                  //
+                  //using this page controller you can make beautiful animation effects
+                  _pageController.animateToPage(index,
+                      duration: Duration(milliseconds: 500), curve: Curves.easeOutSine);
+                  animatePageOne = false;
+                });
+              },
             ),
           ),
         ),
-      )
+      ),
     );
   }
 }
