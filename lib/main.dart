@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Home.dart';
 import 'AboutMe.dart';
 import 'SizeConfig.dart';
+import 'test.dart';
 
 bool animatePageOne = true;
 
@@ -98,10 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               HomePage(animate: animatePageOne,),
               AboutMePage(),
-              Text(
-                'Search',
-                style: optionStyle,
-              ),
+              test(),
               Text(
                 'Profile',
                 style: optionStyle,

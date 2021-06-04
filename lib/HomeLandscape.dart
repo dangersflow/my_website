@@ -24,6 +24,87 @@ class HomeLandscape extends StatefulWidget {
 }
 
 class _HomeLandscapeState extends State<HomeLandscape> {
+  bool selectedUniv = false;
+  bool selectedTw = false;
+  bool selectedDev = false;
+  bool selectedFb = false;
+  bool selectedLi = false;
+  bool selectedGh = false;
+
+  AnimationController? animateController;
+
+  void _onEnterUniv(PointerEvent details){
+    setState(() {
+      selectedUniv = true;
+    });
+  }
+
+  void _onExitUniv(PointerEvent details){
+    setState(() {
+      selectedUniv = false;
+    });
+  }
+
+  void _onEnterTw(PointerEvent details){
+    setState(() {
+      selectedTw = true;
+    });
+  }
+
+  void _onExitTw(PointerEvent details){
+    setState(() {
+      selectedTw = false;
+    });
+  }
+
+  void _onEnterDev(PointerEvent details){
+    setState(() {
+      selectedDev = true;
+    });
+  }
+
+  void _onExitDev(PointerEvent details){
+    setState(() {
+      selectedDev = false;
+    });
+  }
+
+  void _onEnterFb(PointerEvent details){
+    setState(() {
+      selectedFb = true;
+    });
+  }
+
+  void _onExitFb(PointerEvent details){
+    setState(() {
+      selectedFb = false;
+    });
+  }
+
+  void _onEnterGh(PointerEvent details){
+    setState(() {
+      selectedGh = true;
+    });
+  }
+
+  void _onExitGh(PointerEvent details){
+    setState(() {
+      selectedGh = false;
+    });
+  }
+
+  void _onEnterLi(PointerEvent details){
+    setState(() {
+      selectedLi = true;
+    });
+  }
+
+  void _onExitLi(PointerEvent details){
+    setState(() {
+      selectedLi = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -43,16 +124,143 @@ class _HomeLandscapeState extends State<HomeLandscape> {
                     delay: Duration(milliseconds: 600),
                   ),
                   Padding(padding: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.height/3, 0, 0)),
-                  BounceInDown(
-                    child: Container(
-                      child: IconButton(
-                          onPressed: () async => await canLaunch(fbUrl) ? await launch(fbUrl) : throw 'Could not launch $fbUrl',
-                          icon: Icon(FontAwesomeIcons.facebook), iconSize: MediaQuery.of(context).size.width * 0.03), padding: EdgeInsets.fromLTRB(0, 0, MediaQuery.of(context).size.width/5, 0),),
-                    delay: Duration(milliseconds: 1000),),
+                  Row(
+                    children: [
+                      BounceInDown(
+                        child: MouseRegion(
+                          onEnter: _onEnterFb,
+                          onExit: _onExitFb,
+                          child: Stack(
+                            children: [
+                              AnimatedContainer(
+                                child: AnimatedOpacity(
+                                  child: Text(
+                                      "FACEBOOK",
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.007)
+                                  ),
+                                  duration: Duration(milliseconds: 100),
+                                  opacity: selectedFb == false ? 0 : 1,
+                                ),
+                                duration: Duration(milliseconds: 400),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedFb == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.width * 0.035, 0, 0),
+                                alignment: Alignment.center,
+
+                              ),
+                              AnimatedContainer(
+                                child: IconButton(
+                                  onPressed: () async => await canLaunch(fbUrl) ? await launch(fbUrl) : throw 'Could not launch $fbUrl',
+                                  icon: Icon(FontAwesomeIcons.facebook, size: MediaQuery.of(context).size.width * 0.03,),
+                                ),
+                                duration: Duration(milliseconds: 300),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedFb == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, 0, 0, 20),
+                              )
+                            ],
+                          ),
+                        ),
+                        delay: Duration(milliseconds: 1000),
+                      ),
+                      Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0))
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.end,
+                  ),
                   Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0)),
-                  BounceInDown(child: Container(child: IconButton(onPressed: () async => await canLaunch(liUrl) ? await launch(liUrl) : throw 'Could not launch $liUrl', icon: Icon(FontAwesomeIcons.linkedin), iconSize: MediaQuery.of(context).size.width * 0.03)), delay: Duration(milliseconds: 1100),),
+                  Row(
+                    children: [
+                      BounceInDown(
+                        child: MouseRegion(
+                          onEnter: _onEnterLi,
+                          onExit: _onExitLi,
+                          child: Stack(
+                            children: [
+                              AnimatedContainer(
+                                child: AnimatedOpacity(
+                                  child: Text(
+                                      "LINKEDIN",
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.007)
+                                  ),
+                                  duration: Duration(milliseconds: 100),
+                                  opacity: selectedLi == false ? 0 : 1,
+                                ),
+                                duration: Duration(milliseconds: 400),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedLi == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.width * 0.035, 0, 0),
+                                alignment: Alignment.center,
+
+                              ),
+                              AnimatedContainer(
+                                child: IconButton(
+                                  onPressed: () async => await canLaunch(liUrl) ? await launch(liUrl) : throw 'Could not launch $liUrl',
+                                  icon: Icon(FontAwesomeIcons.linkedin, size: MediaQuery.of(context).size.width * 0.03,),
+                                ),
+                                duration: Duration(milliseconds: 300),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedLi == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, 0, 0, 20),
+                              )
+                            ],
+                          ),
+                        ),
+                        delay: Duration(milliseconds: 1100),
+                      ),
+                      Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0))
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.center,
+                  ),
                   Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0)),
-                  BounceInDown(child: Container(child: IconButton(onPressed: () async => await canLaunch(ghUrl) ? await launch(ghUrl) : throw 'Could not launch $ghUrl', icon: Icon(FontAwesomeIcons.github), iconSize: MediaQuery.of(context).size.width * 0.03), padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width/5, 0, 0, 0),), delay: Duration(milliseconds: 1200),)
+                  Row(
+                    children: [
+                      BounceInDown(
+                        child: MouseRegion(
+                          onEnter: _onEnterGh,
+                          onExit: _onExitGh,
+                          child: Stack(
+                            children: [
+                              AnimatedContainer(
+                                child: AnimatedOpacity(
+                                  child: Text(
+                                      "GITHUB",
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.007)
+                                  ),
+                                  duration: Duration(milliseconds: 100),
+                                  opacity: selectedGh == false ? 0 : 1,
+                                ),
+                                duration: Duration(milliseconds: 400),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedGh == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.width * 0.035, 0, 0),
+                                alignment: Alignment.center,
+
+                              ),
+                              AnimatedContainer(
+                                child: IconButton(
+                                  onPressed: () async => await canLaunch(ghUrl) ? await launch(ghUrl) : throw 'Could not launch $ghUrl',
+                                  icon: Icon(FontAwesomeIcons.github, size: MediaQuery.of(context).size.width * 0.03,),
+                                ),
+                                duration: Duration(milliseconds: 300),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedGh == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, 0, 0, 20),
+                              )
+                            ],
+                          ),
+                        ),
+                        delay: Duration(milliseconds: 1200),
+                      ),
+                      Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0))
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.end,
+                  ),
                 ],
               ),
             ),
@@ -109,11 +317,143 @@ class _HomeLandscapeState extends State<HomeLandscape> {
                     delay: Duration(milliseconds: 1000),
                   ),
                   Padding(padding: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.height/3, 0, 0)),
-                  BounceInDown(child: Container(child: IconButton(onPressed: () async => await canLaunch(asUrl) ? await launch(asUrl) : throw 'Could not launch $asUrl', icon: Icon(FontAwesomeIcons.university), iconSize: MediaQuery.of(context).size.width * 0.03), padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width/5, 0, 0, 0),), delay: Duration(milliseconds: 1500),),
+                  Row(
+                    children: [
+                      BounceInDown(
+                        child: MouseRegion(
+                          onEnter: _onEnterUniv,
+                          onExit: _onExitUniv,
+                          child: Stack(
+                            children: [
+                              AnimatedContainer(
+                                child: AnimatedOpacity(
+                                  child: Text(
+                                      "RESEARCH",
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.007)
+                                  ),
+                                  duration: Duration(milliseconds: 100),
+                                  opacity: selectedUniv == false ? 0 : 1,
+                                ),
+                                duration: Duration(milliseconds: 400),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedUniv == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.width * 0.035, 0, 0),
+                                alignment: Alignment.center,
+
+                              ),
+                              AnimatedContainer(
+                                child: IconButton(
+                                  onPressed: () async => await canLaunch(asUrl) ? await launch(asUrl) : throw 'Could not launch $asUrl',
+                                  icon: Icon(FontAwesomeIcons.university, size: MediaQuery.of(context).size.width * 0.03,),
+                                ),
+                                duration: Duration(milliseconds: 300),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedUniv == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, 0, 0, 20),
+                              )
+                            ],
+                          ),
+                        ),
+                        delay: Duration(milliseconds: 1500),
+                      ),
+                      Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0))
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.start,
+                  ),
                   Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0)),
-                  BounceInDown(child: Container(child: IconButton(onPressed: () async => await canLaunch(dvUrl) ? await launch(dvUrl) : throw 'Could not launch $dvUrl', icon: Icon(FontAwesomeIcons.dev), iconSize: MediaQuery.of(context).size.width * 0.03)), delay: Duration(milliseconds: 1400),),
+                  Row(
+                    children: [
+                      BounceInDown(
+                        child: MouseRegion(
+                          onEnter: _onEnterDev,
+                          onExit: _onExitDev,
+                          child: Stack(
+                            children: [
+                              AnimatedContainer(
+                                child: AnimatedOpacity(
+                                  child: Text(
+                                      "DEV",
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.007)
+                                  ),
+                                  duration: Duration(milliseconds: 100),
+                                  opacity: selectedDev == false ? 0 : 1,
+                                ),
+                                duration: Duration(milliseconds: 400),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedDev == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.width * 0.035, 0, 0),
+                                alignment: Alignment.center,
+
+                              ),
+                              AnimatedContainer(
+                                child: IconButton(
+                                  onPressed: () async => await canLaunch(dvUrl) ? await launch(dvUrl) : throw 'Could not launch $dvUrl',
+                                  icon: Icon(FontAwesomeIcons.dev, size: MediaQuery.of(context).size.width * 0.03,),
+                                ),
+                                duration: Duration(milliseconds: 300),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedDev == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, 0, 0, 20),
+                              )
+                            ],
+                          ),
+                        ),
+                        delay: Duration(milliseconds: 1400),
+                      ),
+                      Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0))
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.center,
+                  ),
                   Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0)),
-                  BounceInDown(child: Container(child: IconButton(onPressed: () async => await canLaunch(twUrl) ? await launch(twUrl) : throw 'Could not launch $twUrl', icon: Icon(FontAwesomeIcons.twitter), iconSize: MediaQuery.of(context).size.width * 0.03,), padding: EdgeInsets.fromLTRB(0, 0, MediaQuery.of(context).size.width/5, 0),), delay: Duration(milliseconds: 1300),)
+                  Row(
+                    children: [
+                      BounceInDown(
+                        child: MouseRegion(
+                          onEnter: _onEnterTw,
+                          onExit: _onExitTw,
+                          child: Stack(
+                            children: [
+                              AnimatedContainer(
+                                child: AnimatedOpacity(
+                                  child: Text(
+                                      "TWITTER",
+                                      style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.007)
+                                  ),
+                                  duration: Duration(milliseconds: 100),
+                                  opacity: selectedTw == false ? 0 : 1,
+                                ),
+                                duration: Duration(milliseconds: 400),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedTw == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.width * 0.035, 0, 0),
+                                alignment: Alignment.center,
+
+                              ),
+                              AnimatedContainer(
+                                child: IconButton(
+                                  onPressed: () async => await canLaunch(twUrl) ? await launch(twUrl) : throw 'Could not launch $twUrl',
+                                  icon: Icon(FontAwesomeIcons.twitter, size: MediaQuery.of(context).size.width * 0.03,),
+                                ),
+                                duration: Duration(milliseconds: 300),
+                                width: MediaQuery.of(context).size.width * 0.05,
+                                height: MediaQuery.of(context).size.width * 0.05,
+                                curve: Curves.easeOut,
+                                padding: selectedTw == false ? EdgeInsets.fromLTRB(0, 0, 0, 0) : EdgeInsets.fromLTRB(0, 0, 0, 20),
+                              )
+                            ],
+                          ),
+                        ),
+                        delay: Duration(milliseconds: 1300),
+                      ),
+                      Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 0))
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.start,
+                  ),
                 ],
               ),
             )

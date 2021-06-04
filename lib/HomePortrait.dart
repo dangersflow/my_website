@@ -31,6 +31,9 @@ class _HomePortraitState extends State<HomePortrait> {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width/7, MediaQuery.of(context).size.height/15, MediaQuery.of(context).size.width/7, 0),
+            ),
             Container(
               child: Column(
                 children: [
@@ -87,7 +90,7 @@ class _HomePortraitState extends State<HomePortrait> {
                     mainAxisAlignment: MainAxisAlignment.center,
                   ),
                   Padding(
-                    padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width/7, 20, MediaQuery.of(context).size.width/7, 0),
+                    padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width/7, MediaQuery.of(context).size.width/7, MediaQuery.of(context).size.width/7, 0),
                   ),
                   Row(
                     children: [
@@ -102,6 +105,9 @@ class _HomePortraitState extends State<HomePortrait> {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 0, MediaQuery.of(context).size.height/15),
+            )
           ],
         ),
       ),
