@@ -39,6 +39,7 @@ dependencies:
   emoji_picker_flutter: ^1.0.5
   hovering: ^1.0.4
   animated_background: ^2.0.0
+  mouse_parallax: ^1.1.0
 
 dev_dependencies:
   flutter_test:
