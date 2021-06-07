@@ -40,6 +40,7 @@ dependencies:
   hovering: ^1.0.4
   animated_background: ^2.0.0
   mouse_parallax: ^1.1.0
+  native_pdf_view: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +53,7 @@ dev_dependencies:
 flutter:
   assets:
     - graphics/
+    - assets/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_website/ResumePage.dart';
 import 'Home.dart';
 import 'AboutMe.dart';
 import 'SizeConfig.dart';
@@ -118,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             children: <Widget>[
               HomePage(animate: animatePageOne,),
               AboutMePage(),
-              test(),
+              ResumePage(),
               Text(
                 'Profile',
                 style: optionStyle,
@@ -160,8 +161,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   text: 'About Me',
                 ),
                 GButton(
-                  icon: FontAwesomeIcons.search,
-                  text: 'Search',
+                  icon: FontAwesomeIcons.newspaper,
+                  text: 'Resume',
                 ),
                 GButton(
                   icon: FontAwesomeIcons.user,
