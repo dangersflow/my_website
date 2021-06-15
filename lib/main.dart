@@ -1,7 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_website/NewHome.dart';
 import 'package:my_website/ResumePage.dart';
 import 'Home.dart';
 import 'AboutMe.dart';
@@ -9,10 +11,13 @@ import 'SizeConfig.dart';
 import 'test.dart';
 import 'package:animated_background/animated_background.dart';
 import 'dart:math' as math;
+import 'HoverWidget.dart';
+import 'package:my_website/CustomAppBar.dart';
 
 bool animatePageOne = true;
 
 void main() {
+  Paint.enableDithering = true;
   runApp(MyApp());
 }
 
@@ -85,15 +90,42 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      appBar:
+          CustomAppBar(
+            height: 125,
+          ),
+      /*
+      AppBar(
+        backgroundColor: Color(0xFF1A1A1A),
+        elevation: 3,
+        title: HoverWidget(child: Text("Francisco Gonzalez", style: GoogleFonts.catamaran(fontSize: MediaQuery.of(context).size.height * 0.03, color: Colors.white70),), height: double.maxFinite, width: double.maxFinite,),
+        titleSpacing: MediaQuery.of(context).size.width * 0.1,
+        toolbarHeight: MediaQuery.of(context).size.height * 0.082,
 
+        actions: [
+          MaterialButton(child: HoverWidget(child: Text("Home", style: GoogleFonts.catamaran(fontSize: MediaQuery.of(context).size.height * 0.02, color: Colors.grey),), height: 100, width: MediaQuery.of(context).size.width * 0.06,), onPressed: (){}, minWidth: MediaQuery.of(context).size.width * 0.07, ),
+          MaterialButton(child: HoverWidget(child: Text("About Me", style: GoogleFonts.catamaran(fontSize: MediaQuery.of(context).size.height * 0.02, color: Colors.grey),), height: 100, width: MediaQuery.of(context).size.width * 0.06), onPressed: (){}, minWidth: MediaQuery.of(context).size.width * 0.07),
+          MaterialButton(child: HoverWidget(child: Text("Projects", style: GoogleFonts.catamaran(fontSize: MediaQuery.of(context).size.height * 0.02, color: Colors.grey),), height: 100, width: MediaQuery.of(context).size.width * 0.06), onPressed: (){}, minWidth: MediaQuery.of(context).size.width * 0.07),
+          MaterialButton(child: HoverWidget(child: Text("Resume", style: GoogleFonts.catamaran(fontSize: MediaQuery.of(context).size.height * 0.02, color: Colors.grey),), height: 100, width: MediaQuery.of(context).size.width * 0.06), onPressed: (){}, minWidth: MediaQuery.of(context).size.width * 0.07),
+          Padding(padding: EdgeInsets.fromLTRB(0, 0, MediaQuery.of(context).size.width * 0.2, 0))
+        ],
+      ),
+      */
       backgroundColor: Color(0xFF1B263B),
       body: Stack(
         children: [
+          /*
           RotatedBox(quarterTurns: 2,
             child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(image: AssetImage("graphics/gradient.png"), fit: BoxFit.cover)
               ),
+            ),
+          ),
+          */
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("graphics/background.png"), fit: BoxFit.cover)
             ),
           ),
           AnimatedBackground(
@@ -104,9 +136,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 particleCount: 100,
                 spawnMaxRadius: 5,
                 spawnOpacity: 0,
-                spawnMaxSpeed: 20,
+                spawnMaxSpeed: 15,
                 spawnMinSpeed: 1,
-                baseColor: Colors.white
+                baseColor: Colors.grey
               ),
               paint: Paint()
                 ..style = PaintingStyle.fill
@@ -117,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             controller: _pageController,
             physics: NeverScrollableScrollPhysics(),
             children: <Widget>[
-              HomePage(animate: animatePageOne,),
+              NewHome(),
               AboutMePage(),
               ResumePage(),
               Text(
@@ -128,6 +160,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           )
         ],
       ),
+      /*
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -155,6 +188,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 GButton(
                   icon: FontAwesomeIcons.home,
                   text: 'Home',
+
                 ),
                 GButton(
                   icon: FontAwesomeIcons.heart,
@@ -185,6 +219,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
         ),
       ),
+      */
     );
   }
 }
