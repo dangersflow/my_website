@@ -30,7 +30,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return MediaQuery.of(context).size.width > 800 ? Material(
       elevation: 3,
       child: Column(
         children: [
@@ -53,6 +53,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
             )
         ],
       ),
+    ) : AppBar(
+      backgroundColor: Color(0xFF1A1A1A),
+      title: Text("Francisco Gonzalez"),
     );
   }
 }

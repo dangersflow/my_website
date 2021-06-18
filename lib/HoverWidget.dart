@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class HoverWidget extends StatefulWidget {
@@ -7,11 +5,7 @@ class HoverWidget extends StatefulWidget {
   var height;
   var width;
 
-  HoverWidget({
-    required this.child,
-    this.height,
-    this.width
-});
+  HoverWidget({required this.child, this.height, this.width});
 
   @override
   _HoverWidgetState createState() => _HoverWidgetState();
@@ -32,13 +26,13 @@ class _HoverWidgetState extends State<HoverWidget> {
     _width = widget.width;
   }
 
-  void onEnter(PointerEvent details){
+  void onEnter(PointerEvent details) {
     setState(() {
       hoverOver = true;
     });
   }
 
-  void onExit(PointerEvent details){
+  void onExit(PointerEvent details) {
     setState(() {
       hoverOver = false;
     });
@@ -52,13 +46,13 @@ class _HoverWidgetState extends State<HoverWidget> {
       child: AnimatedContainer(
         alignment: Alignment.center,
         child: Column(
-          children: [
-            _child
-          ],
+          children: [widget.child],
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         duration: Duration(milliseconds: 100),
-        padding: hoverOver == false ? EdgeInsets.fromLTRB(40, 0, 40, 0) : EdgeInsets.fromLTRB(40, 0, 40, 10),
+        padding: hoverOver == false
+            ? EdgeInsets.fromLTRB(40, 0, 40, 0)
+            : EdgeInsets.fromLTRB(40, 0, 40, 10),
       ),
     );
   }
