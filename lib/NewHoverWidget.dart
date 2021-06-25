@@ -42,6 +42,7 @@ class _NewHoverWidgetState extends State<NewHoverWidget> {
         }
       },
       child: AnimatedContainer(
+        curve: Curves.easeOut,
         child: widget.child,
         margin: hovering == false
             ? EdgeInsets.fromLTRB(0, 10, 0, 0)
