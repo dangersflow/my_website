@@ -144,8 +144,21 @@ class _CustomAppBarState extends State<CustomAppBar> {
             ),
           )
         : AppBar(
+            toolbarHeight: MediaQuery.of(context).size.height * 0.09,
+            leading: Container(
+              padding: EdgeInsets.fromLTRB(
+                  0, (MediaQuery.of(context).size.height * 0.09) * 0.10, 0, 0),
+              child: IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              ),
+            ),
             backgroundColor: Color(0xFF1A1A1A),
             title: Container(
+              padding: EdgeInsets.fromLTRB(
+                  0, (MediaQuery.of(context).size.height * 0.09) * 0.10, 0, 0),
               child: Text(
                 "Francisco Gonzalez",
                 style: GoogleFonts.catamaran(

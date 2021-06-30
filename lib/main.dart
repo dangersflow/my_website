@@ -99,6 +99,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         child: Drawer(
           child: ListView(
             children: [
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+              ),
               ListTile(
                 title: Text("Home",
                     style: GoogleFonts.catamaran(
@@ -223,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             vsync: this,
             behaviour: RainParticleBehaviour(
                 options: ParticleOptions(
-                    particleCount: 20,
+                    particleCount: 30,
                     spawnMaxRadius: 5,
                     spawnOpacity: 0,
                     spawnMaxSpeed: 5,
