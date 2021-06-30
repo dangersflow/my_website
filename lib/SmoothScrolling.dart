@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-const int DEFAULT_NORMAL_SCROLL_ANIMATION_LENGTH_MS = 250;
+const int DEFAULT_NORMAL_SCROLL_ANIMATION_LENGTH_MS = 100;
 const int DEFAULT_SCROLL_SPEED = 130;
 
 class SmoothScrollWeb extends StatelessWidget {
@@ -27,7 +27,7 @@ class SmoothScrollWeb extends StatelessWidget {
     required this.child,
     this.scrollSpeed = DEFAULT_SCROLL_SPEED,
     this.scrollAnimationLength = DEFAULT_NORMAL_SCROLL_ANIMATION_LENGTH_MS,
-    this.curve = Curves.easeOut,
+    this.curve = Curves.linear,
   });
 
   @override

@@ -28,17 +28,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
 
-      ),
+          ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   PageController _pageController = PageController();
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
+      TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
 
   @override
   void initState() {
@@ -90,10 +90,102 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar:
-          CustomAppBar(
-            height: 125,
+      drawer: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Color(
+              0xFF1A1A1A), //This will change the drawer background to blue.
+          //other styles
+        ),
+        child: Drawer(
+          child: ListView(
+            children: [
+              ListTile(
+                title: Text("Home",
+                    style: GoogleFonts.catamaran(
+                        fontSize: (MediaQuery.of(context).size.height +
+                                MediaQuery.of(context).size.width) *
+                            0.015,
+                        color: Colors.white)),
+                onTap: () {
+                  setState(() {
+                    _pageController.animateToPage(0,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeInOutCubic);
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              Divider(
+                color: Colors.grey,
+                indent: 15,
+                endIndent: 40,
+              ),
+              ListTile(
+                title: Text("About Me",
+                    style: GoogleFonts.catamaran(
+                        fontSize: (MediaQuery.of(context).size.height +
+                                MediaQuery.of(context).size.width) *
+                            0.015,
+                        color: Colors.white)),
+                onTap: () {
+                  setState(() {
+                    _pageController.animateToPage(1,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeInOutCubic);
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              Divider(
+                color: Colors.grey,
+                indent: 15,
+                endIndent: 40,
+              ),
+              ListTile(
+                title: Text("Projects",
+                    style: GoogleFonts.catamaran(
+                        fontSize: (MediaQuery.of(context).size.height +
+                                MediaQuery.of(context).size.width) *
+                            0.015,
+                        color: Colors.white)),
+                onTap: () {
+                  setState(() {
+                    _pageController.animateToPage(2,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeInOutCubic);
+                  });
+                  Navigator.pop(context);
+                },
+              ),
+              Divider(
+                color: Colors.grey,
+                indent: 15,
+                endIndent: 40,
+              ),
+              ListTile(
+                title: Text("Resume",
+                    style: GoogleFonts.catamaran(
+                        fontSize: (MediaQuery.of(context).size.height +
+                                MediaQuery.of(context).size.width) *
+                            0.015,
+                        color: Colors.white)),
+                onTap: () {
+                  setState(() {
+                    _pageController.animateToPage(3,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeInOutCubic);
+                  });
+                  Navigator.pop(context);
+                },
+              )
+            ],
           ),
+        ),
+      ),
+      appBar: CustomAppBar(
+        height: MediaQuery.of(context).size.height * 0.09,
+        pageController: _pageController,
+      ),
       /*
       AppBar(
         backgroundColor: Color(0xFF1A1A1A),
@@ -124,26 +216,22 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           ),
           */
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("graphics/background.png"), fit: BoxFit.cover)
-            ),
+            decoration: BoxDecoration(color: Color(0xFF18181B)),
           ),
           AnimatedBackground(
             child: Container(),
             vsync: this,
             behaviour: RainParticleBehaviour(
-              options: ParticleOptions(
-                particleCount: 100,
-                spawnMaxRadius: 5,
-                spawnOpacity: 0,
-                spawnMaxSpeed: 15,
-                spawnMinSpeed: 1,
-                baseColor: Colors.grey
-              ),
-              paint: Paint()
-                ..style = PaintingStyle.fill
-                ..strokeWidth = 10
-            ),
+                options: ParticleOptions(
+                    particleCount: 20,
+                    spawnMaxRadius: 5,
+                    spawnOpacity: 0,
+                    spawnMaxSpeed: 5,
+                    spawnMinSpeed: 1,
+                    baseColor: Colors.grey),
+                paint: Paint()
+                  ..style = PaintingStyle.fill
+                  ..strokeWidth = 10),
           ),
           PageView(
             controller: _pageController,
