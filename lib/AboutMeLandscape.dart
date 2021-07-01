@@ -53,7 +53,7 @@ class _AboutMeLandscapeState extends State<AboutMeLandscape> {
                       padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
                       width: (MediaQuery.of(context).size.height +
                               MediaQuery.of(context).size.width) /
-                          6,
+                          5.8,
                       decoration: BoxDecoration(
                           color: Color(0xFF232323),
                           borderRadius: BorderRadius.circular(20)),

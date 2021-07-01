@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_website/NewHome.dart';
+import 'package:my_website/ProjectsPage.dart';
 import 'oldPages/Home.dart';
 import 'oldPages/ResumePage.dart';
 import 'AboutMe.dart';
@@ -242,7 +243,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             children: <Widget>[
               NewHome(),
               AboutMePage(),
-              ResumePage(),
+              ProjectsPage(),
               Text(
                 'Profile',
                 style: optionStyle,
