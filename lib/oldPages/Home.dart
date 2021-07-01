@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'HomeLandscape.dart';
-import 'HomePortrait.dart';
+import '../oldPages/HomeLandscape.dart';
+import '../oldPages/HomePortrait.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, required bool animate}) : super(key: key);
@@ -21,11 +21,13 @@ class _HomePageState extends State<HomePage> {
     _animate = widget.animate;
     print(_animate);
   }
+
   @override
   Widget build(BuildContext context) {
     Orientation deviceOrientation = MediaQuery.of(context).orientation;
 
-
-    return deviceOrientation == Orientation.landscape ?  HomeLandscape() : HomePortrait();
+    return deviceOrientation == Orientation.landscape
+        ? HomeLandscape()
+        : HomePortrait();
   }
 }

@@ -1,12 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
-import 'package:hovering/hovering.dart';
 
 class AboutMeLandscape extends StatefulWidget {
   const AboutMeLandscape({Key? key}) : super(key: key);
@@ -18,41 +11,126 @@ class AboutMeLandscape extends StatefulWidget {
 class _AboutMeLandscapeState extends State<AboutMeLandscape> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        padding: EdgeInsets.fromLTRB(MediaQuery.of(context).orientation == Orientation.landscape ? MediaQuery.of(context).size.width/5 : 20, 100, MediaQuery.of(context).orientation == Orientation.landscape ? MediaQuery.of(context).size.width/5 : 20, 0),
+    return Center(
+      child: SingleChildScrollView(
         child: Column(
           children: [
-            FadeInDown(
-              child: Text("About Me", style: GoogleFonts.catamaran(fontSize: MediaQuery.of(context).size.width * 0.025, fontWeight: FontWeight.bold, color: Colors.white),),
-              delay: Duration(milliseconds: 500),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
             ),
-            FadeInDown(
-              child: Divider(color: Colors.black, thickness: 3,),
-              delay: Duration(milliseconds: 600),
-            ),
-            FadeInDown(
-              child: Text("I'm currently a graduate student at the University of Texas at Rio Grande Valley! "
-                  "Having come from Monterrey, Mexico, my primary language is Spanish, but I know my way around English as well. "
-                  "I have very deep aspirations; ever since I was a kid, I was fascinated with computers! I loved to toy around with them "
-                  "from a very young age; now, if you don't believe me, I cite this picture of myself at 5 years old with my very first laptop (on the bottom).", style: GoogleFonts.catamaran(fontSize: MediaQuery.of(context).size.width * 0.015, fontWeight: FontWeight.bold, color: Colors.white),),
-              delay: Duration(milliseconds: 700),
-            ),
-            FadeInDown(
-              child: Container(
-                child: Card(child: Image.asset("graphics/me-with-laptop.JPG", ), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)), color: Colors.white, semanticContainer: true, clipBehavior: Clip.antiAliasWithSaveLayer,),
-                width: MediaQuery.of(context).size.width * 0.251,
-                height: MediaQuery.of(context).size.width * 0.19,
+            Container(
+              height: ((MediaQuery.of(context).size.height +
+                          MediaQuery.of(context).size.width) /
+                      25) +
+                  12,
+              width: (MediaQuery.of(context).size.height +
+                      MediaQuery.of(context).size.width) /
+                  9,
+              decoration: BoxDecoration(
+                  color: Color(0xFF232323),
+                  borderRadius: BorderRadius.circular(20)),
+              child: Center(
+                child: Text(
+                  "About Me.",
+                  style: GoogleFonts.catamaran(
+                      fontSize: (MediaQuery.of(context).size.height +
+                              MediaQuery.of(context).size.width) *
+                          0.012,
+                      color: Colors.grey),
+                ),
               ),
-              delay: Duration(milliseconds: 900),
             ),
-            FadeInDown(
-              child: Text("As you can see, I was very happy with my laptop, and to be completely honest, not much has changed since then. ", style: GoogleFonts.catamaran(fontSize: MediaQuery.of(context).size.width * 0.015, fontWeight: FontWeight.bold, color: Colors.white),),
-              delay: Duration(milliseconds: 1100),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
+                      width: (MediaQuery.of(context).size.height +
+                              MediaQuery.of(context).size.width) /
+                          6,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF232323),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Text(
+                        "I'm an up and coming software developer! I was born in Monterrey, Mexico, and I spent the first 7 years of my life there. " +
+                            "Soon after, I moved to the US, and have spent my life here so far since then. \n\n" +
+                            "I very much grew up with computers (reference image on the right), and I took to software development " +
+                            "early in high school, so much so, that I actually graduated high school with both my diploma, and an Associate's degree in Computer Science. \n\n" +
+                            "After high school I went to the University of Texas at Rio Grande Valley, where I finished my Bachelor's degree in 3 years, and immediately afterwards, " +
+                            "I was offered a full, paid ride for my Master's degree due to my grades and involvement during my previous years. \n\n" +
+                            "I am currently finishing up my Master's degree and am slated to graduate in May of 2022.",
+                        style: GoogleFonts.catamaran(
+                            fontSize: (MediaQuery.of(context).size.height +
+                                    MediaQuery.of(context).size.width) *
+                                0.007,
+                            color: Colors.grey),
+                      ),
+                    )
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      child: Card(
+                        child: Image.asset(
+                          "graphics/me-with-laptop.JPG",
+                          fit: BoxFit.cover,
+                        ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        color: Colors.white,
+                        semanticContainer: true,
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                      ),
+                      height: ((MediaQuery.of(context).size.height +
+                                  MediaQuery.of(context).size.width) /
+                              10) +
+                          12,
+                      width: (MediaQuery.of(context).size.height +
+                              MediaQuery.of(context).size.width) /
+                          7,
+                    ),
+                    Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
+                      width: (MediaQuery.of(context).size.height +
+                              MediaQuery.of(context).size.width) /
+                          7,
+                      decoration: BoxDecoration(
+                          color: Color(0xFF232323),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Center(
+                        child: Text(
+                          "My hobbies mainly include the following: \n\n" +
+                              "- Games\n" +
+                              "- Collecting music through CD's/Vinyls\n" +
+                              "- Music Restoration (Vinyl)\n" +
+                              "- Playing Piano\n" +
+                              "- Personal Software Development\n",
+                          style: GoogleFonts.catamaran(
+                              fontSize: (MediaQuery.of(context).size.height +
+                                      MediaQuery.of(context).size.width) *
+                                  0.007,
+                              color: Colors.grey),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
           ],
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
         ),
       ),
     );
