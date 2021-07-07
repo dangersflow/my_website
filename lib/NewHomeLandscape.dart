@@ -72,7 +72,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                                               .height +
                                           MediaQuery.of(context).size.width) *
                                       0.009,
-                                  color: Colors.grey),
+                                  color: Colors.white70),
                             ),
                           ],
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -145,7 +145,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                               padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                             ),
                             Icon(FontAwesomeIcons.github,
-                                color: Colors.grey,
+                                color: Colors.white70,
                                 size: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.023),
@@ -166,7 +166,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                                               .height +
                                           MediaQuery.of(context).size.width) *
                                       0.009,
-                                  color: Colors.grey),
+                                  color: Colors.white70),
                             )
                           ],
                         ),
@@ -235,7 +235,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                               padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                             ),
                             Icon(FontAwesomeIcons.linkedin,
-                                color: Colors.grey,
+                                color: Color(0xFF1B87F3),
                                 size: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.023),
@@ -256,7 +256,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                                               .height +
                                           MediaQuery.of(context).size.width) *
                                       0.009,
-                                  color: Colors.grey),
+                                  color: Colors.white70),
                             )
                           ],
                         ),
@@ -330,7 +330,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                               padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                             ),
                             Icon(FontAwesomeIcons.university,
-                                color: Colors.grey,
+                                color: Colors.blueGrey,
                                 size: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.023),
@@ -351,7 +351,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                                               .height +
                                           MediaQuery.of(context).size.width) *
                                       0.009,
-                                  color: Colors.grey),
+                                  color: Colors.white70),
                             )
                           ],
                         ),
@@ -420,7 +420,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                               padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                             ),
                             Icon(FontAwesomeIcons.dev,
-                                color: Colors.grey,
+                                color: Color(0xFF3B49DF),
                                 size: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.023),
@@ -441,7 +441,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                                               .height +
                                           MediaQuery.of(context).size.width) *
                                       0.009,
-                                  color: Colors.grey),
+                                  color: Colors.white70),
                             )
                           ],
                         ),

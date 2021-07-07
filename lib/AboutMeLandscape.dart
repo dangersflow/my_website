@@ -36,7 +36,7 @@ class _AboutMeLandscapeState extends State<AboutMeLandscape> {
                       fontSize: (MediaQuery.of(context).size.height +
                               MediaQuery.of(context).size.width) *
                           0.012,
-                      color: Colors.grey),
+                      color: Colors.white70),
                 ),
               ),
             ),

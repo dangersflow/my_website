@@ -36,7 +36,7 @@ class _AboutMePortraitState extends State<AboutMePortrait> {
                       fontSize: (MediaQuery.of(context).size.height +
                               MediaQuery.of(context).size.width) *
                           0.02,
-                      color: Colors.grey),
+                      color: Colors.white70),
                 ),
               ),
             ),

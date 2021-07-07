@@ -64,7 +64,7 @@ class _NewHomePortraitState extends State<NewHomePortrait> {
                                 fontSize: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.025,
-                                color: Colors.grey),
+                                color: Colors.white70),
                           ),
                         ],
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -154,7 +154,7 @@ class _NewHomePortraitState extends State<NewHomePortrait> {
                                 fontSize: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.02,
-                                color: Colors.grey),
+                                color: Colors.white70),
                           )
                         ],
                       ),
@@ -243,7 +243,7 @@ class _NewHomePortraitState extends State<NewHomePortrait> {
                                 fontSize: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.02,
-                                color: Colors.grey),
+                                color: Colors.white70),
                           )
                         ],
                       ),
@@ -332,7 +332,7 @@ class _NewHomePortraitState extends State<NewHomePortrait> {
                                 fontSize: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.02,
-                                color: Colors.grey),
+                                color: Colors.white70),
                           )
                         ],
                       ),
@@ -421,7 +421,7 @@ class _NewHomePortraitState extends State<NewHomePortrait> {
                                 fontSize: (MediaQuery.of(context).size.height +
                                         MediaQuery.of(context).size.width) *
                                     0.02,
-                                color: Colors.grey),
+                                color: Colors.white70),
                           )
                         ],
                       ),

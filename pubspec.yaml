@@ -45,6 +45,7 @@ dependencies:
   flutter_neumorphic: ^3.1.0
   flutter_scrollbar: ^1.0.0
   expansion_tile_card: ^2.0.0
+  fluro: ^2.0.3
 
 dev_dependencies:
   flutter_test:

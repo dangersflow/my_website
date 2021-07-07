@@ -14,12 +14,54 @@ import 'package:animated_background/animated_background.dart';
 import 'dart:math' as math;
 import 'HoverWidget.dart';
 import 'package:my_website/CustomAppBar.dart';
+import 'package:fluro/fluro.dart';
 
+final router = FluroRouter();
 bool animatePageOne = true;
 
 void main() {
   Paint.enableDithering = true;
+  defineRoutes(router);
   runApp(MyApp());
+}
+
+void defineRoutes(FluroRouter router) {
+  var homeHandler =
+      Handler(handlerFunc: (context, Map<String, dynamic> params) {
+    return NewHome();
+  });
+
+  router.define("/home",
+      handler: homeHandler,
+      transitionDuration: Duration(milliseconds: 500),
+      transitionType: TransitionType.inFromRight);
+
+  var aboutMe = Handler(handlerFunc: (context, Map<String, dynamic> params) {
+    return AboutMePage();
+  });
+
+  router.define("/aboutme",
+      handler: aboutMe,
+      transitionDuration: Duration(milliseconds: 500),
+      transitionType: TransitionType.inFromRight);
+
+  var projects = Handler(handlerFunc: (context, Map<String, dynamic> params) {
+    return ProjectsPage();
+  });
+
+  router.define("/projects",
+      handler: projects,
+      transitionDuration: Duration(milliseconds: 500),
+      transitionType: TransitionType.inFromRight);
+
+  var resume = Handler(handlerFunc: (context, Map<String, dynamic> params) {
+    return ResumePage();
+  });
+
+  router.define("/resume",
+      handler: resume,
+      transitionDuration: Duration(milliseconds: 500),
+      transitionType: TransitionType.inFromRight);
 }
 
 class MyApp extends StatelessWidget {

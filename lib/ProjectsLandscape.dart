@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
+import 'ExpansionCardModule.dart';
+
+var spekLink = "https://github.com/dangersflow/Spektrogram";
 
 class ProjectsLandscape extends StatefulWidget {
   const ProjectsLandscape({Key? key}) : super(key: key);
@@ -43,114 +47,53 @@ class _ProjectsLandscapeState extends State<ProjectsLandscape> {
                 ),
               ),
               Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
-              ExpansionTileCard(
-                heightFactorCurve: Curves.easeInOutCubic,
-                trailing: Container(
-                  width: 100,
-                  child: Row(
-                    children: [Chip(label: Text("Flutter"))],
-                  ),
-                ),
-                title: Text("Spektrogram",
-                    style: GoogleFonts.catamaran(
-                        fontSize: (MediaQuery.of(context).size.height +
-                                MediaQuery.of(context).size.width) *
-                            0.01,
-                        color: Colors.grey)),
-                contentPadding: EdgeInsets.fromLTRB(20, 15, 15, 15),
-                baseColor: Color(0xFF232323),
-                borderRadius: BorderRadius.circular(10),
-                expandedColor: Color(0xFF232323),
-                children: [
-                  Divider(
-                    thickness: 3,
-                    color: Colors.black54,
-                  ),
-                  IntrinsicHeight(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: (MediaQuery.of(context).size.height +
-                                  MediaQuery.of(context).size.width) /
-                              9,
-                          child: Column(
-                            children: [
-                              Text("Started",
-                                  style: GoogleFonts.catamaran(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize:
-                                          (MediaQuery.of(context).size.height +
-                                                  MediaQuery.of(context)
-                                                      .size
-                                                      .width) *
-                                              0.01,
-                                      color: Colors.grey)),
-                              Text("2017",
-                                  style: GoogleFonts.catamaran(
-                                      fontSize:
-                                          (MediaQuery.of(context).size.height +
-                                                  MediaQuery.of(context)
-                                                      .size
-                                                      .width) *
-                                              0.01,
-                                      color: Colors.grey)),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: (MediaQuery.of(context).size.height +
-                                  MediaQuery.of(context).size.width) /
-                              6,
-                          child: Column(
-                            children: [
-                              Text(
-                                  "This was my very first personal project made using the framework Flutter. " +
-                                      "It was a pure passion project because I love music so much, and a tool like this " +
-                                      "wasn't too available on a mobile platform unlike its desktop counterpart.",
-                                  style: GoogleFonts.catamaran(
-                                      fontSize:
-                                          (MediaQuery.of(context).size.height +
-                                                  MediaQuery.of(context)
-                                                      .size
-                                                      .width) *
-                                              0.01,
-                                      color: Colors.grey)),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: (MediaQuery.of(context).size.height +
-                                  MediaQuery.of(context).size.width) /
-                              9,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text("Ended",
-                                  style: GoogleFonts.catamaran(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize:
-                                          (MediaQuery.of(context).size.height +
-                                                  MediaQuery.of(context)
-                                                      .size
-                                                      .width) *
-                                              0.01,
-                                      color: Colors.grey)),
-                              Text("2017",
-                                  style: GoogleFonts.catamaran(
-                                      fontSize:
-                                          (MediaQuery.of(context).size.height +
-                                                  MediaQuery.of(context)
-                                                      .size
-                                                      .width) *
-                                              0.01,
-                                      color: Colors.grey)),
-                            ],
-                          ),
-                        ),
-                      ],
+              ExpansionCardModule(
+                title: "Spektrogram",
+                begin: "2017",
+                end: "2017",
+                body: "This was my very first personal project made using the framework Flutter. " +
+                    "It was a pure passion project because I love music so much, and a tool like this " +
+                    "wasn't too available on a mobile platform unlike its desktop counterpart.",
+                url: spekLink,
+                chipList: [
+                  Chip(
+                    label: Container(
+                      padding: EdgeInsets.all(5),
+                      child: Text(
+                        "Flutter",
+                        style: GoogleFonts.catamaran(
+                            fontSize: (MediaQuery.of(context).size.height +
+                                    MediaQuery.of(context).size.width) *
+                                0.006,
+                            color: Colors.black),
+                      ),
                     ),
+                    backgroundColor: Colors.blueAccent,
+                  )
+                ],
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+              ExpansionCardModule(
+                title: "Tile Simulator",
+                begin: "2019",
+                end: "2019",
+                body:
+                    "The research topic is a tile based self assembly problem. In our case, we would have 3 tile types: S, A, T; A tile is a square; Every tile type has different glue configurations, in which these tiles can stick to each other. S has a glue “a” on its east side. A has a glue “a” on its west, and east sides. T has a glue “a” on its west side. What this means is that these tiles can stick together to form “ST” lines. E.g. [S,T], [S,A,T] ",
+                url: "https://github.com/dangersflow/tileSimulator",
+                chipList: [
+                  Chip(
+                    label: Container(
+                      padding: EdgeInsets.all(5),
+                      child: Text(
+                        "Python",
+                        style: GoogleFonts.catamaran(
+                            fontSize: (MediaQuery.of(context).size.height +
+                                    MediaQuery.of(context).size.width) *
+                                0.006,
+                            color: Colors.black),
+                      ),
+                    ),
+                    backgroundColor: Color(0xFF2B5B83),
                   )
                 ],
               )

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_website/HoverWidget.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_website/main.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final double height;
@@ -54,9 +55,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         ),
                         onPressed: () {
                           setState(() {
+                            /*
                             widget.pageController.animateToPage(0,
                                 duration: Duration(milliseconds: 500),
                                 curve: Curves.easeInOutCubic);
+                                */
+                            widget.pageController.jumpToPage(0);
                           });
                         },
                         minWidth: MediaQuery.of(context).size.width * 0.07,
@@ -80,9 +84,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               width: MediaQuery.of(context).size.width * 0.06),
                           onPressed: () {
                             setState(() {
+                              /*
                               widget.pageController.animateToPage(1,
                                   duration: Duration(milliseconds: 500),
                                   curve: Curves.easeInOutCubic);
+                                  */
+                              widget.pageController.jumpToPage(1);
                             });
                           },
                           minWidth: MediaQuery.of(context).size.width * 0.07),
@@ -105,9 +112,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               width: MediaQuery.of(context).size.width * 0.06),
                           onPressed: () {
                             setState(() {
+                              /*
                               widget.pageController.animateToPage(2,
                                   duration: Duration(milliseconds: 500),
                                   curve: Curves.easeInOutCubic);
+                                  */
+                              widget.pageController.jumpToPage(2);
                             });
                           },
                           minWidth: MediaQuery.of(context).size.width * 0.07),
@@ -130,9 +140,12 @@ class _CustomAppBarState extends State<CustomAppBar> {
                               width: MediaQuery.of(context).size.width * 0.06),
                           onPressed: () {
                             setState(() {
+                              /*
                               widget.pageController.animateToPage(3,
                                   duration: Duration(milliseconds: 500),
                                   curve: Curves.easeInOutCubic);
+                                  */
+                              widget.pageController.jumpToPage(3);
                             });
                           },
                           minWidth: MediaQuery.of(context).size.width * 0.07),
