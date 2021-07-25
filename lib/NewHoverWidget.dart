@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NewHoverWidget extends StatefulWidget {
   Widget child;
-  NewHoverWidget({Key? key, required this.child}) : super(key: key);
+  var url;
+  NewHoverWidget({Key? key, required this.child, this.url}) : super(key: key);
 
   @override
   _NewHoverWidgetState createState() => _NewHoverWidgetState();
@@ -28,7 +30,9 @@ class _NewHoverWidgetState extends State<NewHoverWidget> {
   Widget build(BuildContext context) {
     return InkWell(
       hoverColor: Colors.blue,
-      onTap: () {},
+      onTap: () async => await canLaunch(widget.url)
+          ? await launch(widget.url)
+          : throw 'Could not launch link',
       onHover: (value) {
         print(value);
         if (value) {

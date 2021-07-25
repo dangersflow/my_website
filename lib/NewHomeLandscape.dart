@@ -126,6 +126,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
             Row(
               children: [
                 NewHoverWidget(
+                  url: "https://github.com/dangersflow",
                   child: Container(
                     height: ((MediaQuery.of(context).size.height +
                                 MediaQuery.of(context).size.width) /
@@ -216,6 +217,8 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                   padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 ),
                 NewHoverWidget(
+                  url:
+                      "https://www.linkedin.com/in/francisco-gonzalez-861333134/",
                   child: Container(
                     height: ((MediaQuery.of(context).size.height +
                                 MediaQuery.of(context).size.width) /
@@ -311,6 +314,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
             Row(
               children: [
                 NewHoverWidget(
+                  url: "https://asarg.hackresearch.com/",
                   child: Container(
                     height: ((MediaQuery.of(context).size.height +
                                 MediaQuery.of(context).size.width) /
@@ -401,6 +405,7 @@ class _NewHomeLandscapeState extends State<NewHomeLandscape> {
                   padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 ),
                 NewHoverWidget(
+                  url: "https://dev.to/dangersflow",
                   child: Container(
                     height: ((MediaQuery.of(context).size.height +
                                 MediaQuery.of(context).size.width) /

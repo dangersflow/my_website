@@ -90,7 +90,7 @@ class _ExpansionCardModuleState extends State<ExpansionCardModule> {
               Container(
                 width: (MediaQuery.of(context).size.height +
                         MediaQuery.of(context).size.width) /
-                    6,
+                    4.5,
                 child: Column(
                   children: [
                     Text(widget.body,
