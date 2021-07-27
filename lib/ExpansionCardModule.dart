@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,6 +35,13 @@ class _ExpansionCardModuleState extends State<ExpansionCardModule> {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: widget.chipList),
+      ),
+      leading: Container(
+        child: Icon(
+          FontAwesomeIcons.caretSquareDown,
+          color: Colors.grey,
+        ),
+        padding: EdgeInsets.fromLTRB(0, 7, 0, 0),
       ),
       title: Text(widget.title,
           style: GoogleFonts.catamaran(

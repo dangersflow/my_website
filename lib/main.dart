@@ -6,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_website/NewHome.dart';
 import 'package:my_website/ProjectsPage.dart';
 import 'oldPages/Home.dart';
-import 'oldPages/ResumePage.dart';
 import 'AboutMe.dart';
 import 'SizeConfig.dart';
 import 'test.dart';
@@ -14,6 +13,7 @@ import 'package:animated_background/animated_background.dart';
 import 'dart:math' as math;
 import 'HoverWidget.dart';
 import 'package:my_website/CustomAppBar.dart';
+import 'Resume.dart';
 
 bool animatePageOne = true;
 
@@ -244,16 +244,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               NewHome(),
               AboutMePage(),
               ProjectsPage(),
-              Center(
-                child: Text(
-                  'Under Construction!',
-                  style: GoogleFonts.catamaran(
-                      fontSize: (MediaQuery.of(context).size.height +
-                              MediaQuery.of(context).size.width) *
-                          0.015,
-                      color: Colors.white),
-                ),
-              ),
+              ResumePage(),
             ],
           )
         ],

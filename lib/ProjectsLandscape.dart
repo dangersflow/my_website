@@ -46,7 +46,7 @@ class _ProjectsLandscapeState extends State<ProjectsLandscape> {
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+              Padding(padding: EdgeInsets.fromLTRB(0, 100, 0, 0)),
               ExpansionCardModule(
                 title: "Spektrogram",
                 begin: "2017",
@@ -72,7 +72,7 @@ class _ProjectsLandscapeState extends State<ProjectsLandscape> {
                   )
                 ],
               ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+              Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 0)),
               ExpansionCardModule(
                 title: "Tile Simulator",
                 begin: "2019",
@@ -97,7 +97,7 @@ class _ProjectsLandscapeState extends State<ProjectsLandscape> {
                   )
                 ],
               ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+              Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 0)),
               ExpansionCardModule(
                 title: "Dog vs Cat Classifier",
                 begin: "2020",
@@ -139,7 +139,7 @@ class _ProjectsLandscapeState extends State<ProjectsLandscape> {
                   )
                 ],
               ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+              Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 0)),
               ExpansionCardModule(
                 title: "Tumble Tiles",
                 begin: "2021",
@@ -181,7 +181,7 @@ class _ProjectsLandscapeState extends State<ProjectsLandscape> {
                   )
                 ],
               ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+              Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 0)),
               ExpansionCardModule(
                 title: "Image Encryption Project",
                 begin: "2021",
@@ -212,7 +212,7 @@ class _ProjectsLandscapeState extends State<ProjectsLandscape> {
                   ),
                 ],
               ),
-              Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+              Padding(padding: EdgeInsets.fromLTRB(0, 30, 0, 0)),
               ExpansionCardModule(
                 title: "Personal Flutter Website",
                 begin: "2021",
@@ -238,7 +238,8 @@ class _ProjectsLandscapeState extends State<ProjectsLandscape> {
                     backgroundColor: Colors.blueAccent,
                   ),
                 ],
-              )
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(0, 60, 0, 0)),
             ],
           ),
         ),
